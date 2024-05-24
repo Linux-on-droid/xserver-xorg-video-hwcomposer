@@ -93,7 +93,8 @@ Bool hwc_hwcomposer_init(ScrnInfoPtr pScrn)
 	int err;
 
 	hwc_start_fake_surfaceflinger(pScrn);
-
+	hwc->hwcVersion = HWC_DEVICE_API_VERSION_2_0;
+	return hwc_hwcomposer2_init(pScrn);
 	hw_module_t *hwcModule = 0;
 	err = hw_get_module(HWC_HARDWARE_MODULE_ID, (const hw_module_t **) &hwcModule);
 	assert(err == 0);
