@@ -214,9 +214,9 @@ hwc_display_pre_init(ScrnInfoPtr pScrn)
         pScrn->virtualX = pScrn->display->virtualX;
         pScrn->virtualY = pScrn->display->virtualY;
     } else {
-        /* Pick rotated HWComposer screen resolution */
-        pScrn->virtualX = hwc->hwcHeight;
-        pScrn->virtualY = hwc->hwcWidth;
+        /* Pick HWComposer screen resolution */
+        pScrn->virtualX = hwc->hwcWidth;
+        pScrn->virtualY = hwc->hwcHeight;
      }
     pScrn->displayWidth = pScrn->virtualX;
 
